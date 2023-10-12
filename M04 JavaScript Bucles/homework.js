@@ -4,14 +4,27 @@ function obtenerMayor(x, y) {
    // "x" e "y" son números enteros.
    // Retornar el número más grande.
    // Si son iguales, retornar cualquiera de los dos.
-   // Tu código:
+   if(parseInt(x) > parseInt(y)){
+      return x;
+   }
+   else if(parseInt(x) < parseInt(y)){
+      return y;
+   }
+   else if(parseInt(x) === parseInt(y)){
+      return y;
+   }
 }
 
 function mayoriaDeEdad(edad) {
    // Determinar si la persona puede ingresar al evento según su edad.
    // Si tiene 18 años ó más debe retornar el string: "Allowed".
    // Caso contrario: "Not allowed".
-   // Tu código:
+   if(parseInt(edad) >= 18){
+      return  "Allowed";
+   }
+   else{
+      return "Not allowed";
+   }
 }
 
 function conection(status) {
@@ -20,7 +33,15 @@ function conection(status) {
    // Si el estado es igual a 2, el usuario está "Away".
    // De lo contrario, presumimos que el usuario está "Offline".
    // Retornar el estado de conexión del usuario.
-   // Tu código:
+   if(parseInt(status) === 1){
+      return  "Online";
+   }
+   else  if(parseInt(status) === 2){
+      return "Away";
+   }
+   else{
+      return "Offline";
+   }
 }
 
 function saludo(idioma) {
@@ -29,7 +50,18 @@ function saludo(idioma) {
    // Si "idioma" es "mandarin", devuelve "Ni Hao!".
    // Si "idioma" es "ingles", devuelve "Hello!".
    // Si "idioma" no es ninguno de los anteriores o es `undefined` devuelve "Hola!".
-   // Tu código:
+   if(String(idioma) === "aleman"){
+      return "Guten Tag!";
+   }
+else if(String(idioma) === "mandarin"){
+   return "Ni Hao!"
+}
+else if(String(idioma) === "ingles"){
+   return "Hello!"
+}
+else {
+   return "Hola!"
+} 
 }
 
 function colors(color) {
@@ -40,7 +72,21 @@ function colors(color) {
    // En caso que el color recibido sea "orange" --> "This is orange".
    // Si no es ninguno de esos colores           --> "Color not found".
    // IMPORTANTE: utilizar el statement SWITCH.
-   // Tu código:
+   if(String(color) === "blue"){
+      return "This is blue";
+   }
+else if(String(color) === "red"){
+   return "This is red"
+}
+else if(String(color) === "green"){
+   return "This is green"
+}
+else if(String(color) === "orange"){
+   return "This is orange"
+}
+else {
+   return "Color not found"
+} 
 }
 
 function esDiezOCinco(num) {
