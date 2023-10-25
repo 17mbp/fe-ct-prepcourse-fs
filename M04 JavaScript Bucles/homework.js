@@ -92,13 +92,22 @@ else {
 function esDiezOCinco(num) {
    // Retornar true si "num" es 10 o 5.
    // De lo contrario, retornar false.
-   // Tu código:
+   if(num === 10 || num === 5){
+      return true;
+   }
+   else  { 
+      return false;
+   }
 }
 
 function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
-   // Tu código:
+   if(parseInt(num) < 50 & parseInt(num) > 20){
+      return true;
+   }
+   else
+      return false;
 }
 
 function esEntero(num) {
@@ -106,8 +115,11 @@ function esEntero(num) {
    // Ejemplo: 0.8   ---> false
    // Ejemplo: 1     ---> true
    // Ejemplo: (-10) ---> true
-   // De lo contrario, retorna false.
-   // Tu código:
+   // De lo contrario, retorna false.   
+   if (typeof num === 'number') {     
+      return Number.isInteger(num);
+   }
+   return false;   
 }
 
 function fizzBuzz(num) {
@@ -115,7 +127,18 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 5, retorna "buzz".
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
-   // Tu código:
+   if(parseInt(num) % 15 === 0){
+      return "fizzbuzz";
+   }
+   if(parseInt(num) % 3 === 0){
+      return "fizz";
+   }
+   else if(parseInt(num) % 5 === 0){
+      return "buzz";
+   } 
+   else  {
+      return false;
+   }
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -125,7 +148,22 @@ function operadoresLogicos(num1, num2, num3) {
    // Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
-   // Tu código:
+   if (parseInt(num1) === 0 || parseInt(num2) === 0 || parseInt(num3) === 0 ) {
+      return "Error"
+   }
+   else if(parseInt(num1) < 0 || parseInt(num2) < 0 || parseInt(num3) < 0 && Math.sign(parseInt(num1)) === -1 && Math.sign(parseInt(num2)) === -1 && Math.sign(parseInt(num3)) === -1){
+      return "Hay negativos";
+   }
+   else if(parseInt(num1) > parseInt(num2) && parseInt(num1) > parseInt(num3) && Math.sign(num1) === 1) {
+      return "Numero 1 es mayor y positivo";
+   } 
+   else if(parseInt(num3) > parseInt(num1) && parseInt(num3) > parseInt(num2)){      
+      num3 += 1;
+      return num3;
+   }  
+   else {
+      return false;
+   }
 }
 
 function esPrimo(num) {
@@ -134,26 +172,50 @@ function esPrimo(num) {
    // [Pista 1]: un número primo sólo es divisible por sí mismo y por 1.
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
-   // Tu código:
+   if (num <= 1) {
+      return false;
+   }
+   for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+          return false;  
+      } 
+   }
+   return true;  // Retorna true si el número no es divisible por otro número. 
 }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
-   // Tu código:
+   if(valor){
+      return "Soy verdadero";
+   }
+   else{
+      return "Soy falso";
+   }
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
-   // Tu código:
+   if(parseInt(num) > 99 && parseInt(num) < 1000){
+      return true;
+   }
+   else {
+      return false;
+   }
 }
 
 function doWhile(num) {
    // Implementar una función que aumente el valor recibido en 5 hasta un límite de 8 veces.
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
-   // Tu código:
+   let con = 0;
+   do{
+       num += 5;
+       con++;
+   }
+   while( con < 8 );       
+   return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
